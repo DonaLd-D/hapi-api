@@ -1,3 +1,5 @@
+const Joi = require("joi")
+
 module.exports=[
   {
     method:'post',
@@ -7,7 +9,17 @@ module.exports=[
     },
     config:{
       tags:['api','orders'],
-      description:'创建订单'
+      description:'创建订单',
+      validate:{
+        payload:{
+          goodList:Joi.array().items(
+            Joi.object().keys({
+              good_id:Joi.number().integer(),
+              count:Joi.number().integer()
+            })
+          )
+        }
+      }
     }
   },
   {
@@ -18,7 +30,12 @@ module.exports=[
     },
     config:{
       tags:['api','orders'],
-      description:'支付某条订单'
+      description:'支付某条订单',
+      validate:{
+        params:{
+          orderId:Joi.string().required()
+        }
+      }
     }
   }
 ]
