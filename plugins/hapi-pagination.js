@@ -16,6 +16,7 @@ const options={
   routes:{
     include:[
       '/shops',
+      '/shops/{shopId}/goods'
     ],
     exclude:[]
   }
