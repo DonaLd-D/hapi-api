@@ -5,6 +5,7 @@ const indexRoutes=require('./routes/index')
 const ordersRoutes=require('./routes/orders')
 const shopsRoutes=require('./routes/shops')
 const hapiSwagger=require('./plugins/hapi-swagger')
+const hapiPagination=require('./plugins/hapi-pagination')
 
 const server=new hapi.Server()
 
@@ -15,7 +16,8 @@ server.connection({
 
 const init=async ()=>{
   await server.register([
-    ...hapiSwagger
+    ...hapiSwagger,
+    hapiPagination
   ])
   server.route([
     ...indexRoutes,

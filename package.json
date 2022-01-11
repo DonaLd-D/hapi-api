@@ -11,6 +11,7 @@
   "dependencies": {
     "env2": "^2.2.2",
     "hapi": "^16.7.0",
+    "hapi-pagination": "^1.22.0",
     "hapi-swagger": "^7.10.0",
     "inert": "^4.2.1",
     "joi": "^13.7.0",
