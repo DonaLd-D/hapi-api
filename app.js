@@ -4,6 +4,7 @@ const config=require('./config/index')
 const indexRoutes=require('./routes/index')
 const ordersRoutes=require('./routes/orders')
 const shopsRoutes=require('./routes/shops')
+const usersRoutes=require('./routes/users')
 const hapiSwagger=require('./plugins/hapi-swagger')
 const hapiPagination=require('./plugins/hapi-pagination')
 
@@ -22,7 +23,8 @@ const init=async ()=>{
   server.route([
     ...indexRoutes,
     ...ordersRoutes,
-    ...shopsRoutes
+    ...shopsRoutes,
+    ...usersRoutes
   ])
   await server.start()
   console.log(`Server running at: ${server.info.uri}`)

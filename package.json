@@ -15,6 +15,7 @@
     "hapi-swagger": "^7.10.0",
     "inert": "^4.2.1",
     "joi": "^13.7.0",
+    "jsonwebtoken": "^8.5.1",
     "mysql2": "^2.3.3",
     "package": "^1.0.1",
     "sequelize": "^6.12.5",
