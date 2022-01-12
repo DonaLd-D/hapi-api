@@ -23,7 +23,8 @@ module.exports=[
       description:'获取店铺列表',
       validate:{
         query:paginationDefine,
-      }
+      },
+      auth:false
     }
   },
   {
@@ -52,7 +53,8 @@ module.exports=[
           shopId: Joi.string().required().description('店铺的id'),
         },
         query:paginationDefine,
-      }
+      },
+      auth:false
     }
   }
 ]

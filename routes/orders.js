@@ -1,4 +1,5 @@
 const Joi = require("joi")
+const {headersDefine}=require('../utils/router-helper')
 
 module.exports=[
   {
@@ -18,7 +19,8 @@ module.exports=[
               count:Joi.number().integer()
             })
           )
-        }
+        },
+        ...headersDefine,
       }
     }
   },
@@ -34,7 +36,8 @@ module.exports=[
       validate:{
         params:{
           orderId:Joi.string().required()
-        }
+        },
+        ...headersDefine,
       }
     }
   }
